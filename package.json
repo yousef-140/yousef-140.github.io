@@ -1,0 +1,16 @@
+{
+  "name": "yousef-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio website (no framework). Content lives in /data.",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "verify": "node scripts/verify.js",
+    "build": "node scripts/verify.js && node scripts/build.js",
+    "test": "node scripts/verify.js && node scripts/smoke.js",
+    "test:dist": "node scripts/smoke.js dist",
+    "preview": "node scripts/serve.js dist"
+  },
+  "engines": { "node": ">=18" },
+  "devDependencies": { "jsdom": "^24.1.0" }
+}
