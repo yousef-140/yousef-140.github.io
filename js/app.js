@@ -78,9 +78,9 @@
 
     h += '<section id="about"><div class="wrap"><h2>About me</h2>' + S.about.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</div></section>";
 
-    h += '<section id="contact"><div class="wrap"><h2>Contact</h2><p>For freelance inquiries, send a short description of your data, goal and deadline.</p><div class="row">' +
+    h += '<section id="contact"><div class="wrap"><h2>Contact</h2><p>Tell me about your data, your goal and your deadline.</p><div class="row">' +
       '<a class="btn primary" href="mailto:' + esc(S.contact.email) + '">Email me</a><a class="btn" href="' + esc(S.contact.linkedin) + '" target="_blank" rel="noopener">LinkedIn</a>' +
-      '<a class="btn" href="' + esc(S.contact.github) + '" target="_blank" rel="noopener">GitHub</a></div><p><small>Email opens your mail app (no contact-form backend is used).</small></p></div></section>';
+      '<a class="btn" href="' + esc(S.contact.github) + '" target="_blank" rel="noopener">GitHub</a></div><p>Email: <a href="mailto:' + esc(S.contact.email) + '">' + esc(S.contact.email) + "</a></p></div></section>";
     return h;
   }
 
@@ -146,7 +146,7 @@
     var n = document.getElementById("nav"), o = n.classList.toggle("open");
     this.setAttribute("aria-expanded", String(o));
   });
-  document.getElementById("footer").innerHTML = "© " + new Date().getFullYear() + " " + esc(S.name) + ". Built as a static site. <a href=\"" + esc(S.contact.github) + "\">GitHub</a>";
+  document.getElementById("footer").innerHTML = "© " + new Date().getFullYear() + " " + esc(S.name) + ". Built as a static site. <a href=\"" + esc(S.contact.github) + "\">GitHub</a> · <a href=\"mailto:" + esc(S.contact.email) + "\">" + esc(S.contact.email) + "</a>";
   document.addEventListener("error", function (e) {
     var t = e.target;
     if (t && t.tagName === "IMG") { var d = document.createElement("div"); d.className = "ph"; d.textContent = "Image not found: " + t.getAttribute("src"); t.replaceWith(d); }
